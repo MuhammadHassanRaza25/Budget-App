@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget App</title>
+    <link rel="icon" href="images/budget icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- Budget & Expense Start -->
+    <div class="parentDiv">
+
+        <div class="budgetDiv">
+            <h1 class="budgetHeading">Budget <img src="images/budget icon.png" alt="image"></h1>
+            <input type="text" placeholder="Enter Your Budget">
+            <button class="setbudgetBtn">Set Budget</button>
+            <h4 id="copyright">CopyRight &#169; 2024 By Muhammad Hassan Raza</h4>
+        </div>
+        
+        <div class="expenseDiv">
+          <h1 class="expenseHeading">Expenses <img src="images/expense icon.png" alt="image"></h1>
+          <input type="text" placeholder="Enter Title Of Product"> 
+          <input type="text" placeholder="Enter Cost Of Product">
+          <button class="checkBtn">Check Amount</button>
+        </div>
+
+    </div>
+    <!-- Budget & Expense End -->
+
+    <!-- Show Budget & Expense Details Start -->
+      <div class="showDetails">
+       <h1>Total Budget <span>0</span></h1>
+       <h1>Expenses <span>0</span></h1>
+       <h1>Balance <span>0</span></h1>
+      </div>
+    <!-- Show Budget & Expense Details End -->
+
+    <!----- Expense List Start ---->
+        <div class="expenseListDiv">
+           <h1 class="listHeading">Expense List</h1>
+
+           <div class="showList">
+             <p class="listItem">milk <span>2400</span> <i class="bi bi-trash3-fill"></i></p>
+            </div>
+        </div>
+    <!----- Expense List End ------>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
