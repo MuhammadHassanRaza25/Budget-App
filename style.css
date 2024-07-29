@@ -163,3 +163,52 @@ input:focus::placeholder{
     text-align: center;
     margin-top: 11.5%;
 }
+/* Responsiveness Start */
+@media(max-width:1024px){
+    .parentDiv{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2%;
+     }
+     .budgetDiv{
+        width: 50%;
+        margin: 0 auto;
+    }
+    .expenseDiv{
+        width: 50%;
+        margin: 0 auto;
+    }
+    .showDetails{
+        width: 52%;
+    }
+    .expenseListDiv{
+        width: 50%;
+    }
+    #copyright{
+        margin-top: 8%;
+    }
+}
+@media(max-width:650px){
+    .budgetDiv{
+        width: 90%;
+    }
+    .expenseDiv{
+        width: 90%;
+    }
+    .showDetails{
+        width: 92%;
+    }
+    .showDetails h1{
+        font-size:15px;
+    }
+    .expenseListDiv{
+        width: 90%;
+    }
+    .listItem{
+        font-size: 15px;
+    }
+    #copyright{
+        margin-top: 6%;
+    }
+}
+/* Responsiveness End */

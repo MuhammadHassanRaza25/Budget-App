@@ -6,48 +6,55 @@
     <title>Budget App</title>
     <link rel="icon" href="images/budget icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     <!-- Budget & Expense Start -->
     <div class="parentDiv">
 
-        <div class="budgetDiv">
+        <div class="budgetDiv" data-aos="zoom-in">
             <h1 class="budgetHeading">Budget <img src="images/budget icon.png" alt="image"></h1>
-            <input type="text" placeholder="Enter Your Budget">
-            <button class="setbudgetBtn">Set Budget</button>
+            <input type="text" placeholder="Enter Your Budget" id="budgetInput">
+            <button class="setbudgetBtn" id="setbudgetBtn">Set Budget</button>
             <h4 id="copyright">CopyRight &#169; 2024 By Muhammad Hassan Raza</h4>
         </div>
         
-        <div class="expenseDiv">
+        <div class="expenseDiv" data-aos="zoom-in">
           <h1 class="expenseHeading">Expenses <img src="images/expense icon.png" alt="image"></h1>
-          <input type="text" placeholder="Enter Title Of Product"> 
-          <input type="text" placeholder="Enter Cost Of Product">
-          <button class="checkBtn">Check Amount</button>
+          <input type="text" placeholder="Enter Title Of Product" id="ptitleInput"> 
+          <input type="text" placeholder="Enter Cost Of Product" id="pcostInput">
+          <button class="checkBtn" id="checkBtn">Check Amount</button>
         </div>
 
     </div>
     <!-- Budget & Expense End -->
 
     <!-- Show Budget & Expense Details Start -->
-      <div class="showDetails">
-       <h1>Total Budget <span>0</span></h1>
-       <h1>Expenses <span>0</span></h1>
-       <h1>Balance <span>0</span></h1>
+      <div class="showDetails" data-aos="fade-up">
+       <h1>Total Budget <span id="showBudget">0</span></h1>
+       <h1>Expenses <span id="showExp">0</span></h1>
+       <h1>Balance <span id="showBalance">0</span></h1>
       </div>
     <!-- Show Budget & Expense Details End -->
 
     <!----- Expense List Start ---->
-        <div class="expenseListDiv">
+        <div class="expenseListDiv"  data-aos="fade-up">
            <h1 class="listHeading">Expense List</h1>
 
-           <div class="showList">
-             <p class="listItem">milk <span>2400</span> <i class="bi bi-trash3-fill"></i></p>
+            <div class="showList" id="showList">
+
             </div>
         </div>
     <!----- Expense List End ------>
 
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+    
     <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
