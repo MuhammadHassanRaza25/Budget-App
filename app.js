@@ -30,6 +30,7 @@ setbudgetBtn.addEventListener('click',()=>{
 // Set Budget Functionality End
 
 // Check Amount Functionality Start
+var expenseSum = 0
 checkBtn.addEventListener('click',()=>{
     if(ptitleInput.value == '' && pcostInput.value == ''){
         Swal.fire({
@@ -39,9 +40,21 @@ checkBtn.addEventListener('click',()=>{
           });
     }
     else{
+       //show total expense start
         var convertToNum = Number(pcostInput.value)
-        showExp.innerHTML = convertToNum
-    
+        var expenseArr = []
+        expenseArr.push(convertToNum)
+        for (let i = 0; i < expenseArr.length; i++) {
+            expenseSum += expenseArr[i]
+        }
+        showExp.innerHTML = expenseSum
+        //summary: cost input se number string main a rhy thy unko string se number main convert kia hai. or sarae numbers ka sum uper 1var main add kia hai.
+        //show total expense end
+
+        //show balance amount start
+        //show balance amount end
+
+        // showing items in list
          showList.innerHTML += `
         <p class="listItem">${ptitleInput.value} <span>${pcostInput.value}</span> <i class="bi bi-trash3-fill" onclick="del(this)"></i></p>
         `
