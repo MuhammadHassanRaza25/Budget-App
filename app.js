@@ -19,11 +19,23 @@ setbudgetBtn.addEventListener('click',()=>{
     }
     else{
       showBudget.innerHTML = budgetInput.value
-      Swal.fire({
-        title: "Good job!",
-        text: "Budget Set Successfully 💰",
-        icon: "success"
+      //alert start
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
       });
+      Toast.fire({
+        icon: "success",
+        title: "Budget Set Successfully"
+      });
+      //alert end
       budgetInput.value = ''
     }
 })
@@ -62,11 +74,24 @@ checkBtn.addEventListener('click',()=>{
          showList.innerHTML += `
         <p class="listItem">${ptitleInput.value} <span>${pcostInput.value}</span> <i class="bi bi-trash3-fill" onclick="del(this)"></i></p>
         `
-        Swal.fire({
-            title: "Good job!",
-            text: "Expenses Add Successfully ✅",
-            icon: "success"
+        //alert start
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
           });
+          Toast.fire({
+            icon: "success",
+            title: "Expenses Add Successfully"
+          });
+          //alert end
+          
         ptitleInput.value = ''
         pcostInput.value = ''
     }
