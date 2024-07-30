@@ -40,20 +40,23 @@ checkBtn.addEventListener('click',()=>{
           });
     }
     else{
-       //show total expense start
-        var convertToNum = Number(pcostInput.value)
+       //show total expense Start
+        var convertToNum1 = Number(pcostInput.value)
         var expenseArr = []
-        expenseArr.push(convertToNum)
+        expenseArr.push(convertToNum1)
         for (let i = 0; i < expenseArr.length; i++) {
             expenseSum += expenseArr[i]
         }
         showExp.innerHTML = expenseSum
         //summary: cost input se number string main a rhy thy unko string se number main convert kia hai. or sarae numbers ka sum uper 1var main add kia hai.
-        //show total expense end
+        //show total expense End
 
-        //show balance amount start
-        
-        //show balance amount end
+        //show balance amount Start
+        var convertToNum2 = Number(showBudget.innerHTML)
+        showBalance.innerHTML = convertToNum2-expenseSum
+        //summary: 
+        //ye value budgetInput se mil rahi hai. hamny showbudget ki value ko number main convert kia hai or phir is value ko total expense se - kia hai or balance amount main show kia hai.
+        //show balance amount End
 
         // showing items in list
          showList.innerHTML += `
@@ -67,6 +70,19 @@ checkBtn.addEventListener('click',()=>{
         ptitleInput.value = ''
         pcostInput.value = ''
     }
+
+    // Budget Out Functionality Start
+    if(expenseSum > convertToNum2){
+      Swal.fire({
+        title: "Oops...",
+        text: "Budget Limit Is Out",
+        icon: "error"
+      });
+      showList.innerHTML += 'Budget Limit Is Out'
+      showBalance.innerHTML = 'Budget Limit Is Out'
+      showExp.innerHTML = 'Budget Limit Is Out'
+    }
+    // Budget Out Functionality End
 })
 // Check Amount Functionality End
 
