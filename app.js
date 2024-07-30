@@ -52,6 +52,7 @@ checkBtn.addEventListener('click',()=>{
         //show total expense end
 
         //show balance amount start
+        
         //show balance amount end
 
         // showing items in list
