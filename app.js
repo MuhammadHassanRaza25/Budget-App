@@ -22,7 +22,7 @@ setbudgetBtn.addEventListener('click',()=>{
       //alert start
       const Toast = Swal.mixin({
         toast: true,
-        position: "top-end",
+        position: "bottom-end",
         showConfirmButton: false,
         timer: 1500,
         timerProgressBar: true,
@@ -72,12 +72,12 @@ checkBtn.addEventListener('click',()=>{
 
         // showing items in list
          showList.innerHTML += `
-        <p class="listItem">${ptitleInput.value} <span>${pcostInput.value}</span> <i class="bi bi-trash3-fill" onclick="del(this)"></i></p>
+        <p class="listItem"><span>${ptitleInput.value}</span> <span style="text-align: center;">${pcostInput.value}</span> <i style="width: 33%; text-align: end;" class="bi bi-trash3-fill" onclick="del(this)"></i></p>
         `
         //alert start
           const Toast = Swal.mixin({
             toast: true,
-            position: "top-end",
+            position: "bottom-end",
             showConfirmButton: false,
             timer: 1500,
             timerProgressBar: true,
