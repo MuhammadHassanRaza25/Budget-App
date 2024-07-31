@@ -4,7 +4,6 @@
 body{
     background-color: rgb(246, 247, 251);
 }
-
 /* all inputs styling start */
 input{
     font-size: 15px;
@@ -53,6 +52,10 @@ input:focus::placeholder{
     width: 30px;
     margin-top: -0.5%;
 }
+.btnDiv{
+    display: flex;
+    gap: 7px;
+}
 .setbudgetBtn{
     margin-top: 5%;
     background-color: #5665e9;
@@ -67,6 +70,22 @@ input:focus::placeholder{
     cursor: pointer;
 }
 .setbudgetBtn:hover{
+    background-color: #a271f8;
+}
+.addmoreBtn{
+    margin-top: 5%;
+    background-color: #5665e9;
+    color: white;
+    padding: 12px;
+    border: none;
+    width: 150px;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.addmoreBtn:hover{
     background-color: #a271f8;
 }
 /* budget div end */

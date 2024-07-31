@@ -7,6 +7,7 @@ var showBudget = document.getElementById('showBudget')
 var showExp = document.getElementById('showExp')
 var showBalance = document.getElementById('showBalance')
 var showList = document.getElementById('showList')
+var addmoreBtn = document.getElementById('addmoreBtn')
 
 // Set Budget Functionality Start
 setbudgetBtn.addEventListener('click',()=>{
@@ -40,6 +41,42 @@ setbudgetBtn.addEventListener('click',()=>{
     }
 })
 // Set Budget Functionality End
+
+// Add More Budget Functionality Start
+addmoreBtn.addEventListener('click',()=>{
+  if(budgetInput.value == '' ){
+    Swal.fire({
+        title: "Oops...",
+        text: "Please Fill This Input Field!",
+        icon: "error"
+      });
+}
+else{
+  var budgetTonum = Number(budgetInput.value)
+  var valueTonum = Number(showBudget.innerHTML) // ye jo value pehly se total budget main thi usko number main convert kia hai.
+  showBudget.innerHTML = valueTonum += budgetTonum // phir convert wali value jo pehly se thi usme or budget add kia hai.
+  //alert start
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "bottom-end",
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
+  Toast.fire({
+    icon: "success",
+    title: "More Budget Add Successfully"
+  });
+  //alert end
+ showBalance.innerHTML = valueTonum-expenseSum
+ budgetInput.value = ''
+}
+})
+// Add More Budget Functionality End
 
 // Check Amount Functionality Start
 var expenseSum = 0
