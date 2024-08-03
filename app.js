@@ -153,5 +153,6 @@ checkBtn.addEventListener('click',()=>{
 function del(e) {
    e.parentNode.remove()
 }
-//summary: del ke argument main this dia hai or parameter main (e) laga ke icon get kia hai. phir uska parent get karke remove kia hai.
+//summary: del ke argument main this dia hai or parameter main (e) laga ke icon get kia hai. 
+//phir uska parent get karke remove kia hai.
 // Delete icon Functionality End
